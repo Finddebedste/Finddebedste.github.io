@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find de bedste – Børneprodukter du kan stole på</title>
+<meta name="description" content="Find de bedste legetøj, dåbsgaver, barnevogne, autostole og meget mere til dit barn. Håndplukkede anbefalinger.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+/* ===== FARVER — skift disse for at ændre hele sitet ===== */
+:root {
+  --primær:    #C8A97E;
+  --primær-mørk: #A8895E;
+  --mørk:      #2C2417;
+  --bg:        #FAF8F4;
+  --kort:      #FFFFFF;
+  --kant:      #EDE8DF;
+  --tekst:     #2C2417;
+  --dæmpet:    #7A6B58;
+  --highlight: #FFF7EE;
+  --radius:    14px;
+  --radius-s:  8px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--tekst); font-size: 16px; line-height: 1.7; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* ===== TYPOGRAFI ===== */
+h1, h2, h3, h4 { font-family: 'DM Serif Display', serif; font-weight: 400; line-height: 1.25; color: var(--mørk); }
+h1 { font-size: clamp(26px, 4.5vw, 40px); }
+h2 { font-size: clamp(20px, 3vw, 30px); }
+h3 { font-size: 20px; }
+h4 { font-size: 17px; }
+.etiket { font-size: 11px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--primær); display: block; margin-bottom: 0.4rem; }
+
+/* ===== LAYOUT ===== */
+.container { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
+.sektion { padding: 3.5rem 0; }
+.sektion--lys { background: var(--highlight); border-top: 1px solid var(--kant); border-bottom: 1px solid var(--kant); }
+.sektion-header { margin-bottom: 2rem; }
+.sektion-header p { color: var(--dæmpet); margin-top: 0.4rem; }
+.sektion-header--center { text-align: center; max-width: 540px; margin: 0 auto 2.5rem; }
+
+/* ===== KNAPPER ===== */
+.knap { display: inline-block; background: var(--primær); color: #fff; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; padding: 11px 22px; border-radius: var(--radius-s); border: none; cursor: pointer; transition: background 0.15s, transform 0.1s; text-align: center; }
+.knap:hover { background: var(--primær-mørk); transform: translateY(-1px); }
+.knap:active { transform: scale(0.98); }
+.knap--s { font-size: 13px; padding: 8px 16px; }
+.knap--outline { background: transparent; border: 1.5px solid var(--primær); color: var(--primær); }
+.knap--outline:hover { background: var(--highlight); }
+.knap--blok { display: block; width: 100%; text-align: center; }
+.knap--shop { background: var(--highlight); color: var(--primær-mørk); border: 1px solid var(--kant); font-size: 13px; padding: 9px 14px; border-radius: var(--radius-s); display: flex; align-items: center; gap: 6px; justify-content: center; transition: background 0.12s, border-color 0.12s; }
+.knap--shop:hover { background: #fff; border-color: var(--primær); }
+
+/* ===== HEADER ===== */
+.header { background: #fff; border-bottom: 1px solid var(--kant); position: sticky; top: 0; z-index: 100; }
+.header__inner { display: flex; align-items: center; justify-content: space-between; height: 62px; gap: 1rem; }
+.logo { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--mørk); white-space: nowrap; cursor: pointer; }
+.logo span { color: var(--primær); }
+.nav { display: flex; gap: 2px; list-style: none; }
+.nav a { font-size: 13.5px; color: var(--dæmpet); padding: 6px 11px; border-radius: 6px; transition: background 0.12s, color 0.12s; cursor: pointer; }
+.nav a:hover { background: var(--highlight); color: var(--mørk); }
+.nav a.aktiv { color: var(--primær); font-weight: 500; }
+.hamburger { display: none; background: none; border: 1px solid var(--kant); border-radius: 6px; padding: 6px 10px; cursor: pointer; font-size: 18px; color: var(--mørk); }
+
+/* ===== SIDER ===== */
+.side { display: none; }
+.side.aktiv { display: block; }
+
+/* ===== BREADCRUMB ===== */
+.breadcrumb { font-size: 13px; color: var(--dæmpet); padding: 1.2rem 0 0; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.breadcrumb span.klik { cursor: pointer; }
+.breadcrumb span.klik:hover { color: var(--mørk); }
+
+/* ===== HERO ===== */
+.hero { background: #fff; padding: 4.5rem 0 3.5rem; border-bottom: 1px solid var(--kant); }
+.hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+.hero__tekst p { font-size: 17px; color: var(--dæmpet); margin: 1rem 0 2rem; max-width: 420px; }
+.hero__knapper { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero__billede { background: var(--highlight); border-radius: 20px; border: 1px solid var(--kant); aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; font-size: 72px; }
+
+/* ===== TILLIDSBAR ===== */
+.tillidsbar { background: var(--highlight); border-bottom: 1px solid var(--kant); padding: 0.85rem 0; }
+.tillidsbar ul { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; list-style: none; }
+.tillidsbar li { font-size: 13px; color: var(--dæmpet); display: flex; align-items: center; gap: 6px; }
+.prik { width: 5px; height: 5px; border-radius: 50%; background: var(--primær); flex-shrink: 0; }
+
+/* ===== KATEGORI-GRID ===== */
+.kat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(148px, 1fr)); gap: 12px; }
+.kat-kort { background: var(--kort); border: 1px solid var(--kant); border-radius: var(--radius); padding: 1.4rem 1rem; text-align: center; cursor: pointer; transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s; }
+.kat-kort:hover { border-color: var(--primær); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(44,36,23,0.07); }
+.kat-kort__ikon { font-size: 30px; margin-bottom: 0.6rem; }
+.kat-kort__navn { font-size: 13.5px; font-weight: 500; color: var(--mørk); margin-bottom: 2px; }
+.kat-kort__sub { font-size: 11.5px; color: var(--dæmpet); }
+
+/* ===== PRODUKT-GRID ===== */
+.prod-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 18px; }
+.prod-kort { background: var(--kort); border: 1px solid var(--kant); border-radius: var(--radius); overflow: hidden; transition: box-shadow 0.15s, transform 0.15s; }
+.prod-kort:hover { box-shadow: 0 4px 18px rgba(44,36,23,0.08); transform: translateY(-2px); }
+.prod-kort__img { aspect-ratio: 1; background: var(--highlight); display: flex; align-items: center; justify-content: center; font-size: 44px; border-bottom: 1px solid var(--kant); overflow: hidden; }
+.prod-kort__img img { width: 100%; height: 100%; object-fit: cover; }
+.prod-kort__body { padding: 0.9rem; }
+.prod-kort__brand { font-size: 10.5px; color: var(--dæmpet); text-transform: uppercase; letter-spacing: 0.6px; }
+.prod-kort__navn { font-size: 13.5px; font-weight: 500; color: var(--mørk); margin: 3px 0 12px; line-height: 1.4; min-height: 2.8em; }
+
+/* ===== SHOP-GRID ===== */
+.shop-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; margin-top: 1.2rem; }
+
+/* ===== TEKST-INDHOLD ===== */
+.indhold { background: #fff; border: 1px solid var(--kant); border-radius: var(--radius); padding: 2rem 2rem 1.5rem; margin-top: 2rem; }
+.indhold h3 { margin-bottom: 0.75rem; font-size: 21px; }
+.indhold h4 { font-size: 16px; margin: 1.5rem 0 0.5rem; color: var(--mørk); }
+.indhold p { color: var(--dæmpet); margin-bottom: 1rem; font-size: 15px; }
+.indhold ul { list-style: none; margin-bottom: 1rem; }
+.indhold ul li { padding: 3px 0 3px 1.3rem; position: relative; color: var(--dæmpet); font-size: 15px; }
+.indhold ul li::before { content: '✓'; position: absolute; left: 0; color: var(--primær); font-size: 11px; top: 7px; }
+.indhold .fordele-ulemper { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1rem 0; }
+.fordele { background: #F4FBF0; border-radius: 10px; padding: 1.2rem; }
+.fordele h4 { color: #3B6D11; margin-top: 0; }
+.fordele li::before { content: '✅'; font-size: 12px; }
+.ulemper { background: #FFF8F0; border-radius: 10px; padding: 1.2rem; }
+.ulemper h4 { color: #854F0B; margin-top: 0; }
+.ulemper li::before { content: '⚠️'; font-size: 11px; }
+
+/* ===== TYPE-KORT (barnevogne-typer) ===== */
+.type-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-bottom: 2.5rem; }
+.type-kort { background: var(--kort); border: 1px solid var(--kant); border-radius: var(--radius); padding: 1.5rem; }
+.type-kort h3 { font-size: 18px; margin-bottom: 0.6rem; }
+.type-kort p { font-size: 14px; color: var(--dæmpet); margin-bottom: 1rem; }
+
+/* ===== FASE-KORT (babylegetøj) ===== */
+.fase-grid { display: grid; gap: 1.5rem; margin-bottom: 2rem; }
+.fase-kort { background: var(--kort); border: 1px solid var(--kant); border-radius: var(--radius); padding: 1.5rem; }
+.fase-kort__header { display: flex; align-items: center; gap: 12px; margin-bottom: 1rem; }
+.fase-badge { background: var(--primær); color: #fff; font-size: 12px; font-weight: 500; padding: 4px 12px; border-radius: 20px; white-space: nowrap; }
+.fase-kort h3 { font-size: 17px; margin: 0; }
+.fase-kort p { font-size: 14px; color: var(--dæmpet); margin-bottom: 0.75rem; }
+.fase-kort ul { list-style: none; margin-bottom: 1rem; }
+.fase-kort ul li { font-size: 14px; color: var(--dæmpet); padding: 2px 0 2px 1.2rem; position: relative; }
+.fase-kort ul li::before { content: '→'; position: absolute; left: 0; color: var(--primær); font-size: 12px; }
+
+/* ===== AUTOSTOL-TABEL ===== */
+.tabel-wrapper { overflow-x: auto; margin: 1.5rem 0; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th { background: var(--highlight); color: var(--mørk); font-weight: 500; padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--kant); }
+td { padding: 9px 14px; border-bottom: 1px solid var(--kant); color: var(--dæmpet); vertical-align: top; }
+tr:hover td { background: #FDFAF6; }
+
+/* ===== FOOTER ===== */
+.footer { background: var(--mørk); color: rgba(255,255,255,0.55); padding: 3rem 0 2rem; margin-top: 0; }
+.footer__grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2.5rem; margin-bottom: 2rem; }
+.footer__logo { font-family: 'DM Serif Display', serif; font-size: 20px; color: #fff; margin-bottom: 0.6rem; cursor: pointer; }
+.footer__logo span { color: var(--primær); }
+.footer__txt { font-size: 13px; line-height: 1.7; max-width: 260px; }
+.footer h4 { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.8rem; }
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+.footer-links a { font-size: 13px; color: rgba(255,255,255,0.45); cursor: pointer; transition: color 0.12s; }
+.footer-links a:hover { color: #fff; }
+.footer__bund { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.4rem; font-size: 12px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.4rem; }
+
+/* ===== RESPONSIV ===== */
+@media (max-width: 760px) {
+  .nav { display: none; flex-direction: column; position: absolute; top: 62px; left: 0; right: 0; background: #fff; border-bottom: 1px solid var(--kant); padding: 0.75rem; z-index: 200; }
+  .nav.aaben { display: flex; }
+  .hamburger { display: block; }
+  .hero { padding: 2.5rem 0 2rem; }
+  .hero__inner { grid-template-columns: 1fr; gap: 1.5rem; }
+  .hero__billede { font-size: 52px; aspect-ratio: 2/1; }
+  .footer__grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .indhold .fordele-ulemper { grid-template-columns: 1fr; }
+  .prod-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <div class="container">
+    <div class="header__inner">
+      <div class="logo" onclick="visSide('forside')">Find de <span>bedste</span>.dk</div>
+      <ul class="nav" id="nav">
+        <li><a onclick="visSide('legetoj');lukmenu()">Legetøj</a></li>
+        <li><a onclick="visSide('daabsgaver');lukmenu()">Dåbsgaver</a></li>
+        <li><a onclick="visSide('boerneverelse');lukmenu()">Børneværelse</a></li>
+        <li><a onclick="visSide('barnevogne');lukmenu()">Barnevogne</a></li>
+        <li><a onclick="visSide('autostole');lukmenu()">Autostole</a></li>
+        <li><a onclick="visSide('om');lukmenu()">Om os</a></li>
+      </ul>
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+
+<!-- ===================================================
+     FORSIDE
+     =================================================== -->
+<div id="forside" class="side aktiv">
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero__inner">
+        <div class="hero__tekst">
+          <span class="etiket">Danmarks guide til børneprodukter</span>
+          <h1>Find de bedste produkter til dit barn</h1>
+          <p>Vi gennemgår og anbefaler legetøj, dåbsgaver, barnevogne og meget mere — så du nemt finder det rigtige til din lille.</p>
+          <div class="hero__knapper">
+            <button class="knap" onclick="document.getElementById('kategorier').scrollIntoView({behavior:'smooth'})">Se alle kategorier</button>
+            <button class="knap knap--outline" onclick="visSide('daabsgaver')">Dåbsgaver</button>
+          </div>
+        </div>
+        <div class="hero__billede">🧸</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="tillidsbar">
+    <ul>
+      <li><div class="prik"></div> Håndplukkede anbefalinger</li>
+      <li><div class="prik"></div> Opdateret løbende</li>
+      <li><div class="prik"></div> Uafhængige anmeldelser</li>
+      <li><div class="prik"></div> Testet og vurderet</li>
+    </ul>
+  </div>
+
+  <section class="sektion" id="kategorier">
+    <div class="container">
+      <div class="sektion-header--center">
+        <span class="etiket">Udforsk</span>
+        <h2>Hvad leder du efter?</h2>
+      </div>
+      <div class="kat-grid">
+        <div class="kat-kort" onclick="visSide('legetoj')">
+          <div class="kat-kort__ikon">🧸</div>
+          <div class="kat-kort__navn">Babylegetøj</div>
+          <div class="kat-kort__sub">0–12 måneder</div>
+        </div>
+        <div class="kat-kort" onclick="visSide('legetoj')">
+          <div class="kat-kort__ikon">🎮</div>
+          <div class="kat-kort__navn">Legetøj 1–3 år</div>
+          <div class="kat-kort__sub">12–36 måneder</div>
+        </div>
+        <div class="kat-kort" onclick="visSide('legetoj')">
+          <div class="kat-kort__ikon">🎨</div>
+          <div class="kat-kort__navn">Legetøj 4–7 år</div>
+          <div class="kat-kort__sub">Kreativt & lærerigt</div>
+        </div>
+        <div class="kat-kort" onclick="visSide('daabsgaver')">
+          <div class="kat-kort__ikon">🎁</div>
+          <div class="kat-kort__navn">Dåbsgaver</div>
+          <div class="kat-kort__sub">& barselsgaver</div>
+        </div>
+        <div class="kat-kort" onclick="visSide('boerneverelse')">
+          <div class="kat-kort__ikon">🏠</div>
+          <div class="kat-kort__navn">Børneværelse</div>
+          <div class="kat-kort__sub">Indretning & interiør</div>
+        </div>
+        <div class="kat-kort" onclick="visSide('barnevogne')">
+          <div class="kat-kort__ikon">🛒</div>
+          <div class="kat-kort__navn">Barnevogne</div>
+          <div class="kat-kort__sub">Kombivogne & klapvogne</div>
+        </div>
+        <div class="kat-kort" onclick="visSide('autostole')">
+          <div class="kat-kort__ikon">🚗</div>
+          <div class="kat-kort__navn">Autostole</div>
+          <div class="kat-kort__sub">Sikkerhed i bilen</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sektion sektion--lys">
+    <div class="container">
+      <div class="sektion-header">
+        <span class="etiket">Populære sider</span>
+        <h2>Mest besøgte kategorier</h2>
+      </div>
+      <div class="prod-grid">
+        <div class="prod-kort" onclick="visSide('daabsgaver')" style="cursor:pointer">
+          <div class="prod-kort__img">🎁</div>
+          <div class="prod-kort__body">
+            <div class="prod-kort__brand">Populær kategori</div>
+            <div class="prod-kort__navn">Dåbs- og barselsgaver</div>
+            <span class="knap knap--s knap--blok">Se anbefalinger</span>
+          </div>
+        </div>
+        <div class="prod-kort" onclick="visSide('barnevogne')" style="cursor:pointer">
+          <div class="prod-kort__img">🛒</div>
+          <div class="prod-kort__body">
+            <div class="prod-kort__brand">Populær kategori</div>
+            <div class="prod-kort__navn">Barnevogne, kombivogne & klapvogne</div>
+            <span class="knap knap--s knap--blok">Se guide</span>
+          </div>
+        </div>
+        <div class="prod-kort" onclick="visSide('legetoj')" style="cursor:pointer">
+          <div class="prod-kort__img">🧸</div>
+          <div class="prod-kort__body">
+            <div class="prod-kort__brand">Populær kategori</div>
+            <div class="prod-kort__navn">Babylegetøj 0–12 måneder</div>
+            <span class="knap knap--s knap--blok">Se legetøj</span>
+          </div>
+        </div>
+        <div class="prod-kort" onclick="visSide('autostole')" style="cursor:pointer">
+          <div class="prod-kort__img">🚗</div>
+          <div class="prod-kort__body">
+            <div class="prod-kort__brand">Populær kategori</div>
+            <div class="prod-kort__navn">Autostole — find den rigtige</div>
+            <span class="knap knap--s knap--blok">Se guide</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /forside -->
+
+
+<!-- ===================================================
+     LEGETØJ
+     =================================================== -->
+<div id="legetoj" class="side">
+  <div class="container">
+    <div class="breadcrumb">
+      <span class="klik" onclick="visSide('forside')">Forside</span> › <span>Legetøj til baby og børn</span>
+    </div>
+    <section class="sektion">
+      <div class="sektion-header">
+        <span class="etiket">Stimulerende og udviklende</span>
+        <h2>Legetøj til baby og børn</h2>
+        <p>Baby legetøj spiller en afgørende rolle i en lille babys udvikling ved at stimulere forskellige sanser og fremme færdigheder på forskellige stadier.</p>
+      </div>
+
+      <!-- 0-3 måneder -->
+      <div class="fase-grid">
+        <div class="fase-kort">
+          <div class="fase-kort__header">
+            <div class="fase-badge">0–3 måneder</div>
+            <h3>Sanser og tilknytning</h3>
+          </div>
+          <p>I de første måneder oplever babyen verden primært gennem sanserne. Synet er under udvikling, og babyen foretrækker kontraster og bevægelige objekter. Berøring, lyd og stemmer har stor betydning.</p>
+          <p><strong style="color:var(--mørk)">Ideelt legetøj:</strong></p>
+          <ul>
+            <li>Kontrastlegetøj der stimulerer det umodne syn</li>
+            <li>Bløde stofbøger med teksturer og spejle</li>
+            <li>Aktivitetsmåtter til mavetid</li>
+            <li>Beroligende rangler med naturlige lyde</li>
+          </ul>
+          <div class="shop-grid">
+            <a href="https://www.babysam.dk/legetid?age=0-3mdr,0-6%20mdr,3-6mdr" target="_blank" class="knap--shop">Babysam</a>
+            <a href="https://www.partner-ads.com/dk/klikbanner.php?partnerid=54915&bannerid=12639" target="_blank" class="knap--shop">Kids-World</a>
+            <a href="https://luksusbaby.dk/collections/legetoej?filters=extraDataList.recommendedAgeFilterText%3A0-1+%C3%A5r" target="_blank" class="knap--shop">Luksusbaby</a>
+            <a href="https://www.partner-ads.com/dk/klikbanner.php?partnerid=54915&bannerid=106363&htmlurl=https://www.legekaeden.dk/legetoej" target="_blank" class="knap--shop">Legekæden</a>
+            <a href="https://www.borneneskartel.dk/legetoej?page=1&AGE=0&AGE=2" target="_blank" class="knap--shop">Børneneskartel</a>
+            <a href="https://www.partner-ads.com/dk/klikbanner.php?partnerid=54915&bannerid=109274&htmlurl=https://dearbaby.dk/dearbaby-shop/?orderby=date" target="_blank" class="knap--shop">Dearbaby</a>
+          </div>
+        </div>
+
+        <!-- 3-6 måneder -->
+        <div class="fase-kort">
+          <div class="fase-kort__header">
+            <div class="fase-badge">3–6 måneder</div>
+            <h3>Greb og sanseleg</h3>
+          </div>
+          <p>Nu begynder babyen for alvor at undersøge verden med hænderne. Den lærer at gribe om ting, føre dem til munden og ryste dem for at skabe lyd. Legetøj skal kunne tåle lidt tæv og være sikkert at tygge i.</p>
+          <p><strong style="color:var(--mørk)">Ideelt legetøj:</strong></p>
+          <ul>
+            <li>Biddering i naturgummi — Hevea, Oli & Carol og Sophie la Girafe</li>
+            <li>Gribelegetøj med lyd og tekstur — Manhattan Toy og Lamaze</li>
+            <li>Babyspejle og stofbøger — Tiny Love, Lovevery og Jellycat</li>
+          </ul>
+          <div class="shop-grid">
+            <a href="https://www.babysam.dk/legetid?age=0-3mdr,0-6%20mdr,3-6mdr" target="_blank" class="knap--shop">Babysam</a>
+            <a href="https://www.partner-ads.com/dk/klikbanner.php?partnerid=54915&bannerid=12639" target="_blank" class="knap--shop">Kids-World</a>
+            <a href="https://luksusbaby.dk/collections/legetoej?filters=extraDataList.recommendedAgeFilterText%3A0-1+%C3%A5r" target="_blank" class="knap--shop">Luksusbaby</a>
+            <a href="https://www.partner-ads.com/dk/klikbanner.php?partnerid=54915&bannerid=106363&htmlurl=https://www.legekaeden.dk/legetoej" target="_blank" class="knap--shop">Legekæden</a>
+            <a href="https://www.borneneskartel.dk/legetoej?page=1&AGE=0&AGE=2" target="_blank" class="knap--shop">Børneneskartel</a>
+            <a href="https://www.partner-ads.com/dk/klikbanner.php?partnerid=54915&bannerid=109274&htmlurl=https://dearbaby.dk/dearbaby-shop/?orderby=date" target="_blank" class="knap--shop">Dearbaby</a>
+          </div>
+        </div>
+
+        <!-- 6-9 måneder -->
+        <div class="fase-kort">
+          <div class="fase-kort__header">
+            <div class="fase-badge">6–9 måneder</div>
+            <h3>Mobilitet og udforskning</h3>
+          </div>
+          <p>I denne alder bliver babyen mere mobil. Mange lærer at sidde selv, og nogle begynder at kravle. De elsker at gentage handlinger og lære gennem eksperimenter.</p>
+          <p><strong style="color:var(--mørk)">Ideelt legetøj:</strong></p>
+          <ul>
+            <li>Stablekopper og klodser — Little Dutch, PlanToys og Mushie</li>
+            <li>Puttekasser — Hape, Djeco og Le Toy Van</li>
+            <li>Kravlelegetøj og motorikbolde — Oball og bObles</li>
+            <li>Sensoriske bolde og aktivitetspaneler med knapper og lyd</li>
+          </ul>
+          <div class="shop-grid">
+            <a href="https://www.babysam.dk/legetid?age=0-3mdr,0-6%20mdr,3-6mdr,6-12%20mdr" target="_blank" class="knap--shop">Babysam</a>
+            <a href="https://www.kids-world.dk/shop-legetoej-efter-alder-c-26676.html?e16=2436,2437,2438" target="_blank" class="knap--shop">Kids-World</a>
+            <a href="https://luksusbaby.dk/collections/legetoej?filters=extraDataList.recommendedAgeFilterText%3A0-1+%C3%A5r" target="_blank" class="knap--shop">Luksusbaby</a>
+            <a href="https://www.partner-ads.com/dk/klikbanner.php?partnerid=54915&bannerid=106363&htmlurl=https://www.legekaeden.dk/legetoej" target="_blank" class="knap--shop">Legekæden</a>
+            <a href="https://www.borneneskartel.dk/legetoej?page=1&AGE=0&AGE=2" target="_blank" class="knap--shop">Børneneskartel</a>
+            <a href="https://www.partner-ads.com/dk/klikbanner.php?partnerid=54915&bannerid=109274&htmlurl=https://dearbaby.dk/dearbaby-shop/?orderby=date" target="_blank" class="knap--shop">Dearbaby</a>
+          </div>
+        </div>
+
+        <!-- 9-12 måneder -->
+        <div class="fase-kort">
+          <div class="fase-kort__header">
+            <div class="fase-badge">9–12 måneder</div>
+            <h3>Rolleleg og balance</h3>
+          </div>
+          <p>Babyen øver sig nu i at rejse sig op, gå langs møbler og måske tage sine første skridt. Den efterligner voksne og begynder på enkle former for rolleleg.</p>
+          <p><strong style="color:var(--mørk)">Ideelt legetøj:</strong></p>
+          <ul>
+            <li>Gåvogne — BRIO, Moover og Smallstuff</li>
+            <li>Dukker og tøjdyr — Maileg, Rubens Barn og Cam Cam</li>
+            <li>Formspil og sorteringslegetøj med farver og lyd</li>
+            <li>Musikinstrumenter og bøger med knapper og flapper</li>
+          </ul>
+          <div class="shop-grid">
+            <a href="https://www.babysam.dk/legetid?age=9-12mdr,12-18%20mdr" target="_blank" class="knap--shop">Babysam</a>
+            <a href="https://www.partner-ads.com/dk/klikbanner.php?partnerid=54915&bannerid=12639" target="_blank" class="knap--shop">Kids-World</a>
+            <a href="https://luksusbaby.dk/collections/legetoej" target="_blank" class="knap--shop">Luksusbaby</a>
+            <a href="https://www.partner-ads.com/dk/klikbanner.php?partnerid=54915&bannerid=106363&htmlurl=https://www.legekaeden.dk/legetoej" target="_blank" class="knap--shop">Legekæden</a>
+            <a href="https://www.borneneskartel.dk/legetoej" target="_blank" class="knap--shop">Børneneskartel</a>
+            <a href="https://www.partner-ads.com/dk/klikbanner.php?partnerid=54915&bannerid=109274&htmlurl=https://dearbaby.dk/dearbaby-shop/?orderby=date" target="_blank" class="knap--shop">Dearbaby</a>
+          </div>
+        </div>
+      </div><!-- /fase-grid -->
+
+      <div class="indhold">
+        <h3>Leg med kærlighed og omtanke</h3>
+        <p>Legetøj er mere end underholdning – det er et vigtigt redskab i dit barns udvikling. Ved at vælge legetøj der passer til dit barns alder og interesser, støtter du både motoriske færdigheder, sanser, sprog og sociale kompetencer.</p>
+        <p>Husk: du er selv det vigtigste legetøj. Når du leger med, viser du at leg er en fælles oplevelse.</p>
+      </div>
+    </section>
+  </div>
+</div><!-- /legetoj -->
+
+
+<!-- ===================================================
+     DÅBSGAVER
+     =================================================== -->
+<div id="daabsgaver" class="side">
+  <div class="container">
+    <div class="breadcrumb">
+      <span class="klik" onclick="visSide('forside')">Forside</span> › <span>Dåbsgaver</span>
+    </div>
+    <section class="sektion">
+      <div class="sektion-header">
+        <span class="etiket">Fejr den nye begyndelse</span>
+        <h2>Dåbs- og barselsgaver</h2>
+        <p>At fejre nye begyndelser som fødsel og dåb er en tradition der glæder både forældre og deres nærmeste.</p>
+      </div>
+
+      <!-- Smykker -->
+      <div class="sektion-header" style="margin-top:1rem;">
+        <h3>Smykker til barnet</h3>
+      </div>
+      <div class="prod-grid">
+        <div class="prod-kort">
+          <div class="prod-kort__img">✨</div>
+          <div class="prod-kort__body">
+            <div class="prod-kort__brand">Scrouples</div>
+            <div class="prod-kort__navn">Tro, håb og kærlighed halskæde</div>
+            <a href="https://www.partner-ads.com/dk/klikbanner.php?partnerid=54915&bannerid=109876&htmlurl=https://c-centrum.dk/vare/tro-haab-kaerlighed-halskaede-forgyld/" target="_blank" class="knap knap--s knap--blok">Se produkt</a>
+          </div>
+        </div>
+        <div class="prod-kort">
+          <div class="prod-kort__img">💍</div>
+          <div class="prod-kort__body">
+            <div class="prod-kort__brand">CC Jewelries</div>
+            <div class="prod-kort__navn">Hjerte halskæde med personlig gravering</div>
+            <a href="https://www.partner-ads.com/dk/klikbanner.php?partnerid=54915&bannerid=109876&htmlurl=https://c-centrum.dk/vare/hjerte-vedhaeng-by-c/" target="_blank" class="knap knap--s knap--blok">Se produkt</a>
+          </div>
+        </div>
+        <div class="prod-kort">
+          <div class="prod-kort__img">✝️</div>
+          <div class="prod-kort__body">
+            <div class="prod-kort__brand">Scrouples</div>
+            <div class="prod-kort__navn">Dagmarkors m. gravering</div>
+            <a href="https://www.partner-ads.com/dk/klikbanner.php?partnerid=54915&bannerid=109876&htmlurl=https://c-centrum.dk/vare/dagmarkors-lille-scrouples-fg/" target="_blank" class="knap knap--s knap--blok">Se produkt</a>
+          </div>
+        </div>
+      </div>
+      <div class="shop-grid" style="margin-top:1rem;">
+        <a href="https://plaza.dk/collections/bornesmykker" target="_blank" class="knap--shop">Find smykker til dåb — Plaza</a>
+        <a href="https://www.partner-ads.com/dk/klikbanner.php?partnerid=54915&bannerid=109876&htmlurl=https://c-centrum.dk/vare-kategori/smykker/" target="_blank" class="knap--shop">Find smykker — C-Centrum</a>
+      </div>
+
+      <!-- Populære dåbsgaver -->
+      <div class="sektion-header" style="margin-top:2.5rem;">
+        <h3>Populære dåbsgaver</h3>
+      </div>
+      <div class="prod-grid">
+        <div class="prod-kort">
+          <div class="prod-kort__img">🛼</div>
+          <div class="prod-kort__body">
+            <div class="prod-kort__brand">Little Dutch</div>
+            <div class="prod-kort__navn">Multiaktivitets gåvogn</div>
+            <a href="https://www.partner-ads.com/dk/klikbanner.php?partnerid=54915&bannerid=12639&htmlurl=https://www.kids-world.dk/little-dutch-multiaktivitets-gaavogn-fairy-garden-p-374330.html" target="_blank" class="knap knap--s knap--blok">Se produkt</a>
+          </div>
+        </div>
+        <div class="prod-kort">
+          <div class="prod-kort__img">🇩🇰</div>
+          <div class="prod-kort__body">
+            <div class="prod-kort__brand">Nordahl Andersen</div>
+            <div class="prod-kort__navn">Bordflag til dåben</div>
+            <a href="https://www.partner-ads.com/dk/klikbanner.php?partnerid=54915&bannerid=109876&htmlurl=https://c-centrum.dk/vare/forkrommet-bordflag-noa-40cm/" target="_blank" class="knap knap--s knap--blok">Se produkt</a>
+          </div>
+        </div>
+        <div class="prod-kort">
+          <div class="prod-kort__img">🎯</div>
+          <div class="prod-kort__body">
+            <div class="prod-kort__brand">SES Creative</div>
+            <div class="prod-kort__navn">Sanse & aktiveringsring</div>
+            <a href="https://www.partner-ads.com/dk/klikbanner.php?partnerid=54915&bannerid=12639&htmlurl=https://www.kids-world.dk/ses-creative-sanse-aktiveringsring-p-281126.html" target="_blank" class="knap knap--s knap--blok">Se produkt</a>
+          </div>
+        </div>
+      </div>
+      <div class="shop-grid" style="margin-top:1rem;">
+        <a href="https://www.partner-ads.com/dk/klikbanner.php?partnerid=54915&bannerid=12639&htmlurl=https://www.kids-world.dk/advanced_search_result.php?keywords=d%C3%A5bsgaver" target="_blank" class="knap--shop">Dåbsgaver — Kids-World</a>
+        <a href="https://legeakademiet.dk/gaveideer/babyboom/barselsgaver.html" target="_blank" class="knap--shop">Barselsgaver — Legeakademiet</a>
+        <a href="https://www.kids-world.dk/advanced_search_result.php?keywords=little+dutch" target="_blank" class="knap--shop">Little Dutch gavesæt</a>
+      </div>
+
+      <!-- Gaver med gravering -->
+      <div class="sektion-header" style="margin-top:2.5rem;">
+        <h3>Gaver med gravering</h3>
+      </div>
+      <div class="prod-grid">
+        <div class="prod-kort">
+          <div class="prod-kort__img">🚜</div>
+          <div class="prod-kort__body">
+            <div class="prod-kort__brand">Little Dutch</div>
+            <div class="prod-kort__navn">Retro gåvogn med navn</div>
+            <a href="https://www.partner-ads.com/dk/klikbanner.php?partnerid=54915&bannerid=109876&htmlurl=https://c-centrum.dk/vare/little-wagon/" target="_blank" class="knap knap--s knap--blok">Se produkt</a>
+          </div>
+        </div>
+        <div class="prod-kort">
+          <div class="prod-kort__img">🎭</div>
+          <div class="prod-kort__body">
+            <div class="prod-kort__brand">Spring Copenhagen</div>
+            <div class="prod-kort__navn">Matilda figur med gravering</div>
+            <a href="https://www.partner-ads.com/dk/klikbanner.php?partnerid=54915&bannerid=109876&htmlurl=https://c-centrum.dk/vare/mathilda/" target="_blank" class="knap knap--s knap--blok">Se produkt</a>
+          </div>
+        </div>
+        <div class="prod-kort">
+          <div class="prod-kort__img">🍴</div>
+          <div class="prod-kort__body">
+            <div class="prod-kort__brand">Nordahl Andersen</div>
+            <div class="prod-kort__navn">H.C. Andersen dåbsbestik</div>
+            <a href="https://www.partner-ads.com/dk/klikbanner.php?partnerid=54915&bannerid=109876&htmlurl=https://c-centrum.dk/vare/daabsbestik-fra-nordahl-andersen-med-h-c-andersen-4-eventyr/" target="_blank" class="knap knap--s knap--blok">Se produkt</a>
+          </div>
+        </div>
+      </div>
+      <div class="shop-grid" style="margin-top:1rem;">
+        <a href="https://www.partner-ads.com/dk/klikbanner.php?partnerid=54915&bannerid=109876" target="_blank" class="knap--shop">Gaver med gravering — C-Centrum</a>
+        <a href="https://www.partner-ads.com/dk/klikbanner.php?partnerid=54915&bannerid=57445" target="_blank" class="knap--shop">Find graverede gaver</a>
+        <a href="https://www.dahlsgravering.dk/" target="_blank" class="knap--shop">Dahls Gravering</a>
+      </div>
+
+      <!-- Barselsgaver til moren -->
+      <div class="sektion-header" style="margin-top:2.5rem;">
+        <h3>Barselsgaver til moren</h3>
+      </div>
+      <div class="prod-grid">
+        <div class="prod-kort">
+          <div class="prod-kort__img">📖</div>
+          <div class="prod-kort__body">
+            <div class="prod-kort__brand">Mette Søberg</div>
+            <div class="prod-kort__navn">Morgåder bog</div>
+            <a href="https://www.partner-ads.com/dk/klikbanner.php?partnerid=54915&bannerid=84553&htmlurl=https://www.bog-ide.dk/produkt/3737037/mette-soeberg-morgader-haeftet/2985318" target="_blank" class="knap knap--s knap--blok">Se produkt</a>
+          </div>
+        </div>
+        <div class="prod-kort">
+          <div class="prod-kort__img">🛁</div>
+          <div class="prod-kort__body">
+            <div class="prod-kort__brand">Australian Bodycare</div>
+            <div class="prod-kort__navn">Babyshower gave sæt</div>
+            <a href="https://www.partner-ads.com/dk/klikbanner.php?partnerid=54915&bannerid=52884&htmlurl=https://australian-bodycare.dk/products/babyshower-gave" target="_blank" class="knap knap--s knap--blok">Se produkt</a>
+          </div>
+        </div>
+        <div class="prod-kort">
+          <div class="prod-kort__img">🖼️</div>
+          <div class="prod-kort__body">
+            <div class="prod-kort__brand">Dialægt</div>
+            <div class="prod-kort__navn">Plakat — Moren</div>
+            <a href="https://www.partner-ads.com/dk/klikbanner.php?partnerid=54915&bannerid=12639&htmlurl=https://www.kids-world.dk/dialaegt-plakat-30x42-moren-p-166438.html" target="_blank" class="knap knap--s knap--blok">Se produkt</a>
+          </div>
+        </div>
+      </div>
+      <div class="shop-grid" style="margin-top:1rem;">
+        <a href="https://www.matas.dk/mor-barn/graviditet-efterfoedsel/hudpleje-til-gravid-og-nybagt-mor" target="_blank" class="knap--shop">Hudpleje til mor — Matas</a>
+        <a href="https://www.jollyroom.dk/gaver/gaver-til-den-nybagte-mor" target="_blank" class="knap--shop">Gaver til nybagt mor — Jollyroom</a>
+        <a href="https://www.dahlsgravering.dk/553-barselsgave-til-far" target="_blank" class="knap--shop">Barselsgave til far</a>
+      </div>
+
+      <!-- Gaver til faren -->
+      <div class="sektion-header" style="margin-top:2.5rem;">
+        <h3>Gaver til faren</h3>
+      </div>
+      <div class="prod-grid">
+        <div class="prod-kort">
+          <div class="prod-kort__img">🌳</div>
+          <div class="prod-kort__body">
+            <div class="prod-kort__brand">Willow Tree</div>
+            <div class="prod-kort__navn">New Dad figur</div>
+            <a href="https://www.partner-ads.com/dk/klikbanner.php?partnerid=54915&bannerid=109876&htmlurl=https://c-centrum.dk/vare/newdad-fra-willow-tree/" target="_blank" class="knap knap--s knap--blok">Se produkt</a>
+          </div>
+        </div>
+        <div class="prod-kort">
+          <div class="prod-kort__img">🚀</div>
+          <div class="prod-kort__body">
+            <div class="prod-kort__brand">LEGO</div>
+            <div class="prod-kort__navn">Star Wars Tusindårsfalken</div>
+            <a href="https://www.partner-ads.com/dk/klikbanner.php?partnerid=54915&bannerid=106363&htmlurl=https://www.legekaeden.dk/produkt/4761400/75375-lego-star-wars-tusindarsfalken/3145185" target="_blank" class="knap knap--s knap--blok">Se produkt</a>
+          </div>
+        </div>
+        <div class="prod-kort">
+          <div class="prod-kort__img">📚</div>
+          <div class="prod-kort__body">
+            <div class="prod-kort__brand">Lars Daneskov</div>
+            <div class="prod-kort__navn">Far på færde bog</div>
+            <a href="https://www.partner-ads.com/dk/klikbanner.php?partnerid=54915&bannerid=84553&htmlurl=https://www.bog-ide.dk/produkt/2317950/lars-daneskov-far-pa-faerde-haeftet/2725558" target="_blank" class="knap knap--s knap--blok">Se produkt</a>
+          </div>
+        </div>
+      </div>
+      <div class="shop-grid" style="margin-top:1rem;">
+        <a href="https://www.bog-ide.dk/produkt/4789952/anders-kofoed-den-noedvendige-far" target="_blank" class="knap--shop">Den nødvendige far — Bog & Idé</a>
+        <a href="https://www.partner-ads.com/dk/klikbanner.php?partnerid=54915&bannerid=106363&htmlurl=https://www.legekaeden.dk/lego/adults-welcome" target="_blank" class="knap--shop">LEGO til voksne — Legekæden</a>
+      </div>
+
+      <div class="indhold">
+        <h3>Hvad giver man i dåbsgave?</h3>
+        <p>En dåbsgave skal være meningsfuld, personlig og gerne noget barnet kan bruge i mange år frem. En gave med indgravering skiller sig ud som et varigt minde med følelsesmæssig betydning.</p>
+        <ul>
+          <li>Smykker med barnets navn eller fødselsdato — tidløse og personlige</li>
+          <li>Kvalitetslegetøj fra kendte mærker som Little Dutch og Jellycat</li>
+          <li>Mindeæsker og barnetsbøger til de første minder</li>
+          <li>Barselsgaver til mor og far — ofte overset men meget værdsat</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</div><!-- /daabsgaver -->
+
+
+<!-- ===================================================
+     BØRNEVÆRELSE
+     =================================================== -->
+<div id="boerneverelse" class="side">
+  <div class="container">
+    <div class="breadcrumb">
+      <span class="klik" onclick="visSide('forside')">Forside</span> › <span>Børneværelse & Interiør</span>
+    </div>
+    <section class="sektion">
+      <div class="sektion-header">
+        <span class="etiket">Skab de bedste rammer</span>
+        <h2>Børneværelse & Interiør</h2>
+        <p>At skabe et smukt og funktionelt børneværelse er en hjertevarmende opgave. Fra legende møbler og farverige dekorationer til smarte opbevaringsløsninger.</p>
+      </div>
+
+      <div class="prod-grid">
+        <div class="prod-kort">
+          <div class="prod-kort__img">🎨</div>
+          <div class="prod-kort__body">
+            <div class="prod-kort__brand">Indretning</div>
+            <div class="prod-kort__navn">Maling til børneværelset</div>
+            <a href="https://www.google.com/search?q=maling+b%C3%B8rnev%C3%A6relse" target="_blank" class="knap knap--s knap--blok">Find maling</a>
+          </div>
+        </div>
+        <div class="prod-kort">
+          <div class="prod-kort__img">🛏️</div>
+          <div class="prod-kort__body">
+            <div class="prod-kort__brand">Indretning</div>
+            <div class="prod-kort__navn">Møbler til børneværelset</div>
+            <a href="https://www.google.com/search?q=m%C3%B8bler+b%C3%B8rnev%C3%A6relse" target="_blank" class="knap knap--s knap--blok">Find møbler</a>
+          </div>
+        </div>
+        <div class="prod-kort">
+          <div class="prod-kort__img">🖼️</div>
+          <div class="prod-kort__body">
+            <div class="prod-kort__brand">Indretning</div>
+            <div class="prod-kort__navn">Vægdekoration & plakater</div>
+            <a href="https://www.google.com/search?q=v%C3%A6gdekoration+b%C3%B8rnev%C3%A6relse" target="_blank" class="knap knap--s knap--blok">Find vægdekoration</a>
+          </div>
+        </div>
+        <div class="prod-kort">
+          <div class="prod-kort__img">📦</div>
+          <div class="prod-kort__body">
+            <div class="prod-kort__brand">Indretning</div>
+            <div class="prod-kort__navn">Opbevaring & kurve</div>
+            <a href="https://www.google.com/search?q=opbevaring+b%C3%B8rnev%C3%A6relse" target="_blank" class="knap knap--s knap--blok">Find opbevaring</a>
+          </div>
+        </div>
+        <div class="prod-kort">
+          <div class="prod-kort__img">🧶</div>
+          <div class="prod-kort__body">
+            <div class="prod-kort__brand">Indretning</div>
+            <div class="prod-kort__navn">Bløde tekstiler & tæpper</div>
+            <a href="https://www.google.com/search?q=tekstiler+b%C3%B8rnev%C3%A6relse" target="_blank" class="knap knap--s knap--blok">Find tekstiler</a>
+          </div>
+        </div>
+        <div class="prod-kort">
+          <div class="prod-kort__img">🌙</div>
+          <div class="prod-kort__body">
+            <div class="prod-kort__brand">Indretning</div>
+            <div class="prod-kort__navn">Belysning & natlamper</div>
+            <a href="https://www.google.com/search?q=natlampe+b%C3%B8rnev%C3%A6relse" target="_blank" class="knap knap--s knap--blok">Find belysning</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="indhold">
+        <h3>Gode råd til indretning af børneværelset</h3>
+        <p>Ved at kombinere praktiske løsninger med legende elementer kan indretningen skabe et inspirerende og trygt miljø der støtter barnets udvikling og trivsel.</p>
+        <h4>Farvevalg</h4>
+        <ul>
+          <li>Vælg lyse og beroligende farver for at skabe en afslappet atmosfære</li>
+          <li>Overvej farver der stimulerer barnets sanser — bløde pasteller eller naturtoner</li>
+        </ul>
+        <h4>Fleksible møbler</h4>
+        <ul>
+          <li>Invester i multifunktionelle møbler der kan tilpasses barnets alder</li>
+          <li>En barneseng der kan konverteres til juniorseng er en god investering</li>
+        </ul>
+        <h4>Opbevaringsløsninger</h4>
+        <ul>
+          <li>Integrer smarte løsninger som reoler, skuffer og kurve</li>
+          <li>Mærk opbevaringskasser tydeligt — nemt for både forældre og barn</li>
+        </ul>
+        <h4>Must-have på børneværelset</h4>
+        <ul>
+          <li>Barneseng med justerbar højde til nem adgang</li>
+          <li>Lampe med dæmpet lys til aftenrutiner og godnathistorier</li>
+          <li>Bogreol der fremmer læselyst og organisering</li>
+          <li>Puslebord med opbevaring til bleer og nødvendigheder</li>
+          <li>Blød lænestol til hyggestunder med barnet</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</div><!-- /boerneverelse -->
+
+
+<!-- ===================================================
+     BARNEVOGNE
+     =================================================== -->
+<div id="barnevogne" class="side">
+  <div class="container">
+    <div class="breadcrumb">
+      <span class="klik" onclick="visSide('forside')">Forside</span> › <span>Barnevogne, kombivogne & klapvogne</span>
+    </div>
+    <section class="sektion">
+      <div class="sektion-header">
+        <span class="etiket">Vigtig beslutning</span>
+        <h2>Barnevogne, kombivogne & klapvogne</h2>
+        <p>Det kan være svært at finde ud af hvilken type vogn man skal vælge — her gennemgår vi de tre typer så du kan træffe det rigtige valg.</p>
+      </div>
+
+      <div class="type-grid">
+        <div class="type-kort">
+          <h3>🛏️ Barnevogn</h3>
+          <p>Designet til nyfødte og spædbørn med fuldt liggende position. Langt liggemål på 95–100 cm — barnet kan bruge den til lure op til 2–3 årsalderen. Perfekt til den danske tradition med udendørs søvn.</p>
+          <p><strong style="color:var(--mørk)">Populære mærker:</strong> Odder, Basson Baby, Trille, Emmaljunga</p>
+          <div class="shop-grid">
+            <a href="https://www.jollyroom.dk/babyudstyr/barnevogne" target="_blank" class="knap--shop">Find barnevogn — Jollyroom</a>
+            <a href="https://www.babysam.dk/barnevogne" target="_blank" class="knap--shop">Find barnevogn — Babysam</a>
+            <a href="https://luksusbaby.dk/collections/barnevogne" target="_blank" class="knap--shop">Find barnevogn — Luksusbaby</a>
+          </div>
+        </div>
+
+        <div class="type-kort">
+          <h3>🔄 Kombivogn</h3>
+          <p>Kombinerer barnevogn og klapvogn i ét. Babylift de første 6–8 måneder, derefter klapvognsdel. Kompakt og nem at klappe sammen — ideel til bylivet og aktive familier.</p>
+          <p><strong style="color:var(--mørk)">Populære mærker:</strong> Joolz, Bugaboo, Cybex</p>
+          <div class="shop-grid">
+            <a href="https://www.jollyroom.dk/babyudstyr/kombivogne" target="_blank" class="knap--shop">Find kombivogn — Jollyroom</a>
+            <a href="https://www.babysam.dk/kombivogne" target="_blank" class="knap--shop">Find kombivogn — Babysam</a>
+            <a href="https://luksusbaby.dk/collections/kombivogne" target="_blank" class="knap--shop">Find kombivogn — Luksusbaby</a>
+          </div>
+        </div>
+
+        <div class="type-kort">
+          <h3>✈️ Klapvogn</h3>
+          <p>Let og bærbar — ideel til rejser og hurtige ture. Bruges fra ca. 6 måneder når barnet kan sidde selv, og op til 3–4 år. Klappes nemt sammen med én hånd.</p>
+          <p><strong style="color:var(--mørk)">Populære mærker:</strong> Joolz, Joie, Cybex</p>
+          <div class="shop-grid">
+            <a href="https://www.jollyroom.dk/babyudstyr/klapvogne" target="_blank" class="knap--shop">Find klapvogn — Jollyroom</a>
+            <a href="https://www.babysam.dk/klapvogne" target="_blank" class="knap--shop">Find klapvogn — Babysam</a>
+            <a href="https://luksusbaby.dk/collections/klapvogne" target="_blank" class="knap--shop">Find klapvogn — Luksusbaby</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="indhold">
+        <h3>Hvad skal du overveje når du vælger barnevogn?</h3>
+        <div class="fordele-ulemper">
+          <div class="fordele">
+            <h4>Fordele ved klassisk barnevogn</h4>
+            <ul>
+              <li>God komfort — barnet ligger fladt og sover godt ude</li>
+              <li>Lang brugstid — fra nyfødt op til 2–3 år</li>
+              <li>God plads til vinterpose og sovegrej</li>
+              <li>Stabil og robust til gåture i by og natur</li>
+              <li>God gensalgsværdi på kvalitetsvogne</li>
+            </ul>
+          </div>
+          <div class="ulemper">
+            <h4>Ulemper ved klassisk barnevogn</h4>
+            <ul>
+              <li>Stor og tung — svær at løfte og fylder i bilen</li>
+              <li>Mindre fleksibel — skal skiftes til klapvogn</li>
+              <li>Ikke ideel til rejser</li>
+              <li>Kræver opbevaringsplads</li>
+            </ul>
+          </div>
+        </div>
+        <h4>De vigtigste ting at tjekke</h4>
+        <ul>
+          <li>Liggemål — 95–100 cm er ideelt til brug op til 3 år</li>
+          <li>Bolig og hverdag — lejlighed uden elevator kræver let vogn</li>
+          <li>Hjul — luftfyldte giver god affjedring, punkterfri kræver ingen vedligehold</li>
+          <li>Affjedring — god affjedring øger chancen for at barnet sover videre</li>
+          <li>Ventilation — vigtigt når barnet sover ude hele dagen</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</div><!-- /barnevogne -->
+
+
+<!-- ===================================================
+     AUTOSTOLE
+     =================================================== -->
+<div id="autostole" class="side">
+  <div class="container">
+    <div class="breadcrumb">
+      <span class="klik" onclick="visSide('forside')">Forside</span> › <span>Autostole</span>
+    </div>
+    <section class="sektion">
+      <div class="sektion-header">
+        <span class="etiket">Sikkerhed i bilen</span>
+        <h2>Autostole</h2>
+        <p>Da autostole udgør en stor sikkerhedsfaktor er det vigtigt at henvende sig til fagfolk der har forstand på netop dette, når der skal købes ny autostol.</p>
+      </div>
+
+      <div class="shop-grid" style="margin-bottom:2rem;">
+        <a href="https://www.jollyroom.dk/babyudstyr/autostole" target="_blank" class="knap--shop">Find autostol — Jollyroom</a>
+        <a href="https://www.babysam.dk/autostole" target="_blank" class="knap--shop">Find autostol — Babysam</a>
+        <a href="https://luksusbaby.dk/collections/autostole" target="_blank" class="knap--shop">Find autostol — Luksusbaby</a>
+        <a href="https://www.kids-world.dk/autostole-c-3285.html" target="_blank" class="knap--shop">Find autostol — Kids-World</a>
+      </div>
+
+      <div class="indhold">
+        <h3>Oversigt over godkendelser og grupper</h3>
+
+        <h4>ECE R44/04 vs. I-Size (R129)</h4>
+        <div class="tabel-wrapper">
+          <table>
+            <tr>
+              <th>Egenskab</th>
+              <th>ECE R44/04</th>
+              <th>I-Size (R129)</th>
+            </tr>
+            <tr>
+              <td>Baseret på</td>
+              <td>Barnets vægt</td>
+              <td>Barnets højde</td>
+            </tr>
+            <tr>
+              <td>Kørselsretning</td>
+              <td>Ingen specifik anbefaling</td>
+              <td>Anbefaler bagudvendt længere tid</td>
+            </tr>
+            <tr>
+              <td>Sidekollision</td>
+              <td>Krav til beskyttelse</td>
+              <td>Strengere krav</td>
+            </tr>
+            <tr>
+              <td>Fastgørelse</td>
+              <td>Sele og/eller Isofix</td>
+              <td>Anbefaler Isofix-baser</td>
+            </tr>
+            <tr>
+              <td>Status</td>
+              <td>Under udfasning</td>
+              <td>Fremtidig standard</td>
+            </tr>
+          </table>
+        </div>
+
+        <h4>Grupper og vægt/højde</h4>
+        <div class="tabel-wrapper">
+          <table>
+            <tr>
+              <th>Gruppe</th>
+              <th>Vægt</th>
+              <th>Alder ca.</th>
+              <th>Bemærkning</th>
+            </tr>
+            <tr>
+              <td>Gruppe 0+</td>
+              <td>0–13 kg</td>
+              <td>0–15 mdr.</td>
+              <td>Bagudvendt, kan klikkes på barnevogn</td>
+            </tr>
+            <tr>
+              <td>Gruppe 0+/1</td>
+              <td>0–18 kg</td>
+              <td>0–4 år</td>
+              <td>Starter bagudvendt, kan vendes</td>
+            </tr>
+            <tr>
+              <td>Gruppe 1</td>
+              <td>9–18 kg</td>
+              <td>9 mdr.–4 år</td>
+              <td>Fastgøres med sikkerhedssele</td>
+            </tr>
+            <tr>
+              <td>Gruppe 1/2/3</td>
+              <td>9–36 kg</td>
+              <td>9 mdr.–6 år</td>
+              <td>Kombination — kan justeres</td>
+            </tr>
+            <tr>
+              <td>Gruppe 2/3</td>
+              <td>15–36 kg</td>
+              <td>4–12 år</td>
+              <td>Bruger bilens sikkerhedssele</td>
+            </tr>
+          </table>
+        </div>
+
+        <h4>Vigtige overvejelser ved valg af autostol</h4>
+        <ul>
+          <li>Sørg altid for ECE R44/04 eller I-Size (R129) godkendelse</li>
+          <li>Vurder om stolen monteres med Isofix, bilens sele eller begge</li>
+          <li>Tjek polstring, justeringsmuligheder og siddepositioner</li>
+          <li>Overvej stolens levetid og om den kan tilpasses barnets vækst</li>
+          <li>Konsulter uafhængige sikkerhedstests — f.eks. ADAC og FDM</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</div><!-- /autostole -->
+
+
+<!-- ===================================================
+     OM OS
+     =================================================== -->
+<div id="om" class="side">
+  <div class="container">
+    <div class="breadcrumb">
+      <span class="klik" onclick="visSide('forside')">Forside</span> › <span>Om os</span>
+    </div>
+    <section class="sektion">
+      <div style="max-width: 660px;">
+        <span class="etiket">Hvem er vi?</span>
+        <h2>Om Find de bedste</h2>
+        <div class="indhold">
+          <p>Velkommen til Find de bedste — din guide til de bedste børneprodukter på markedet.</p>
+          <p>Vi er passionerede forældre der bruger tid på at researche, sammenligne og anbefale produkter inden for legetøj, dåbsgaver, barnevogne og indretning til børneværelset.</p>
+          <p>Vores mål er enkelt: at spare dig for tid og hjælpe dig med at finde det bedste til din lille — uden at du behøver bruge timer på research.</p>
+          <h4>Affiliateoplysning</h4>
+          <p>Dette site indeholder affiliatelinks. Det betyder at vi modtager en lille kommission hvis du køber et produkt via vores links — uden at det koster dig ekstra. Det er med til at finansiere siden og holde anbefalingerne gratis og tilgængelige for alle.</p>
+          <h4>Kontakt</h4>
+          <p>Har du spørgsmål eller forslag? Skriv til os på: <a href="mailto:info@finddebedste.dk" style="color:var(--primær)">info@finddebedste.dk</a></p>
+        </div>
+      </div>
+    </section>
+  </div>
+</div><!-- /om -->
+
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__logo" onclick="visSide('forside')">Find de <span>bedste</span>.dk</div>
+        <p class="footer__txt">Din guide til de bedste børneprodukter — legetøj, dåbsgaver, barnevogne og meget mere.</p>
+      </div>
+      <div>
+        <h4>Kategorier</h4>
+        <ul class="footer-links">
+          <li><a onclick="visSide('legetoj')">Legetøj</a></li>
+          <li><a onclick="visSide('daabsgaver')">Dåbsgaver</a></li>
+          <li><a onclick="visSide('boerneverelse')">Børneværelse</a></li>
+          <li><a onclick="visSide('barnevogne')">Barnevogne</a></li>
+          <li><a onclick="visSide('autostole')">Autostole</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Om siden</h4>
+        <ul class="footer-links">
+          <li><a onclick="visSide('om')">Om os</a></li>
+          <li><a href="mailto:info@finddebedste.dk">info@finddebedste.dk</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bund">
+      <span>© 2025 Find de bedste. Alle rettigheder forbeholdes.</span>
+      <span>Siden indeholder affiliatelinks — vi modtager kommission ved køb.</span>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+function visSide(id) {
+  document.querySelectorAll('.side').forEach(s => s.classList.remove('aktiv'));
+  var s = document.getElementById(id);
+  if (s) { s.classList.add('aktiv'); window.scrollTo({top:0, behavior:'smooth'}); }
+  document.querySelectorAll('.nav a').forEach(a => a.classList.remove('aktiv'));
+}
+function toggleMenu() { document.getElementById('nav').classList.toggle('aaben'); }
+function lukmenu() { document.getElementById('nav').classList.remove('aaben'); }
+document.addEventListener('click', function(e) {
+  var nav = document.getElementById('nav');
+  var btn = document.querySelector('.hamburger');
+  if (nav && btn && !nav.contains(e.target) && !btn.contains(e.target)) nav.classList.remove('aaben');
+});
+</script>
+</body>
+</html>
